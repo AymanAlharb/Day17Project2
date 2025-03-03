@@ -8,6 +8,7 @@ public class SubscribedPassenger extends Passenger {
     public void reserve(Car car) {
         if (car.getMax_num_of_passengers() == 0) System.out.println("The car is full of passengers.");
         else {
+            car.setMax_num_of_passengers(car.getMax_num_of_passengers()-1);
             this.setTrip_cost(car.getRoute().getTrip_price() * 0.50);
             this.setReserved_car(car);
         }
